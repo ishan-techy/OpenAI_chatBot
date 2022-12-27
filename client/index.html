@@ -11,10 +11,21 @@
     <div id="app">
         <div id="chat_container"></div>
         <form>
-            <textarea name="prompt" rows="1" cols="1" placeholder="Ask me anything..."></textarea>
+            <textarea id="input" name="prompt" rows="1" cols="1" placeholder="Ask me anything..."></textarea>
+            <button type="button" onclick="record()"><img src="assets/microphone.png"></button>
             <button type="submit"><img src="assets/send.svg"></button>
         </form>
     </div>
     <script type="module" src="/script.js"></script>
+    <script>
+    function record() {
+        const voice = new webkitSpeechRecognition();
+        voice.lang = "en-GB";
+        voice.onresult = function (event) {
+            document.getElementById("input").innerHTML =
+            event.results[0][0].transcript;
+        };
+        voice.start();
+    }</script>
   </body>
 </html>
