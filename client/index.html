@@ -27,5 +27,14 @@
         };
         voice.start();
     }</script>
+    <script>
+     function utter(text){
+         const utterThis = new SpeechSynthesisUtterance(document.getElementById(text).innerText);
+         utterThis.lang = "hi-IN";
+         utterThis.pitch = 1.2;
+         speechSynthesis.speak(utterThis);
+         console.log(text)
+     }
+    </script>
   </body>
 </html>
