@@ -148,3 +148,8 @@ form img {
 .chat:hover  > .volume{
     display: block;
 }
+@media only screen and (max-width: 768px) {
+    .volume{
+        display:block;
+    }
+}

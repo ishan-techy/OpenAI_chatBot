@@ -50,7 +50,7 @@ function chatStripe (isAi, value, uniqueId) {
                     <div class="message" id="${uniqueId}">${value}</div>
                     <div class="volume">
                         <button type="button" onclick="utter('${uniqueId}')">
-                            <img height="20px" src="${volume}">
+                            ${isAi ? `<img height="20px" src="${volume}">`:''}
                         </button>
                     </div>
                 </div>
